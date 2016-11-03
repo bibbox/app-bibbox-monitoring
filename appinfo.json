@@ -1,7 +1,7 @@
 {
-		"name": "BIBBOX Aadmin Monitoring",
-		"short_name": "Monitoring",
-		"version": "1.0",
-		"description": "A monitoring solution for Apps and containers with Prometheus, https://prometheus.io/, Grafana, http://grafana.org/, cAdvisor, https://github.com/google/cadvisor, NodeExporter, https://github.com/prometheus/node_exporter and alerting with AlertManager, https://github.com/prometheus/alertmanager",
-    	"tags": ["Admin", "Monitoring"]
+	"name": "BIBBOX Admin Monitoring",
+	"short_name": "Monitoring",
+	"version": "1.0",
+	"description": "A monitoring solution for Apps and Containers with Prometheus, https://prometheus.io/, Grafana, http://grafana.org/, cAdvisor, https://github.com/google/cadvisor, NodeExporter, https://github.com/prometheus/node_exporter and alerting with AlertManager, https://github.com/prometheus/alertmanager",
+	"tags": ["Admin", "Monitoring"]
 }
