@@ -10,9 +10,9 @@ volumes:
 
 services:
 
-  prometheus:
+  §§INSTANCE-prometheus:
     image: prom/prometheus
-    container_name: prometheus
+    container_name: §§INSTANCE-prometheus
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
@@ -31,9 +31,9 @@ services:
     labels:
       org.label-schema.group: "monitoring"
   
-  alertmanager:
+  §§INSTANCE-alertmanager:
     image: prom/alertmanager
-    container_name: alertmanager
+    container_name: §§INSTANCE-alertmanager
     volumes: 
       - ./alertmanager/:/etc/alertmanager/
     command:
@@ -49,9 +49,9 @@ services:
     labels:
       org.label-schema.group: "monitoring"
 
-  nodeexporter:
+  §§INSTANCE-nodeexporter:
     image: prom/node-exporter
-    container_name: nodeexporter
+    container_name: §§INSTANCE-nodeexporter
     restart: unless-stopped
     expose:
       - 9100
@@ -60,9 +60,9 @@ services:
     labels:
       org.label-schema.group: "monitoring"
 
-  cadvisor:
+  §§INSTANCE-cadvisor:
     image: google/cadvisor:v0.24.1
-    container_name: cadvisor
+    container_name: §§INSTANCE-cadvisor
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
@@ -76,9 +76,9 @@ services:
     labels:
       org.label-schema.group: "monitoring"
   
-  grafana:
+  §§INSTANCE-grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: §§INSTANCE-grafana
     volumes:
       - grafana_data:/var/lib/grafana
     env_file:
