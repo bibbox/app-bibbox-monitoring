@@ -32,7 +32,7 @@ services:
   
   §§INSTANCE-alertmanager:
     image: prom/alertmanager
-    container_name: alertmanager
+    container_name: §§INSTANCE-alertmanager
     volumes: 
       - ./alertmanager/:/etc/alertmanager/
     command:
@@ -48,18 +48,18 @@ services:
 
   §§INSTANCE-nodeexporter:
     image: prom/node-exporter
-    container_name: nodeexporter
+    container_name: §§INSTANCE-nodeexporter
     restart: unless-stopped
     expose:
       - 9100
     networks:
-      -  §§INSTANCE-monitor-net
+      - §§INSTANCE-monitor-net
     labels:
       org.label-schema.group: "monitoring"
 
   §§INSTANCE-cadvisor:
     image: google/cadvisor:v0.24.1
-    container_name: cadvisor
+    container_name: §§INSTANCE-cadvisor
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
@@ -84,6 +84,6 @@ services:
     ports:
       - §§PORT:3000
     networks:
-      -  §§INSTANCE-monitor-net
+      - monitor-net
     labels:
       org.label-schema.group: "monitoring"
