@@ -32,7 +32,7 @@ services:
   
   §§INSTANCE-alertmanager:
     image: prom/alertmanager
-    container_name: §§INSTANCE-alertmanager
+    container_name: alertmanager
     volumes: 
       - ./alertmanager/:/etc/alertmanager/
     command:
@@ -48,7 +48,7 @@ services:
 
   §§INSTANCE-nodeexporter:
     image: prom/node-exporter
-    container_name: §§INSTANCE-nodeexporter
+    container_name: nodeexporter
     restart: unless-stopped
     expose:
       - 9100
@@ -59,7 +59,7 @@ services:
 
   §§INSTANCE-cadvisor:
     image: google/cadvisor:v0.24.1
-    container_name: §§INSTANCE-cadvisor
+    container_name: cadvisor
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
