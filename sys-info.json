@@ -1,4 +1,4 @@
 {
-  runningcontainers:["§§INSTANCE-prometheus", "§§INSTANCE-alertmanager"],
+  runningcontainers:["-grafana"],
   supportcontainers:[ ]    
 }
