@@ -3,8 +3,6 @@
 # SCRIPT TO INSTALL PHENOTIPS INSTANCE AT A BIBBOX SERVER
 #
 #
-echo "Installing OpenSpecimen BIBBOX Application"
-echo "installing from $PWD"
 
 PROGNAME=$(basename $0)
 
@@ -37,8 +35,6 @@ checkParametersAndWriteLog()
     else
         echo "Port: $port"
     fi 
-# ADD CUSTOm CHECKS AN LOSs as YOU LIKE
-
 }
 
 updateConfigurationFile()
@@ -52,24 +48,22 @@ updateConfigurationFile()
     sed -i  "s#§§FOLDER#${folder}#g" "$folder/docker-compose.yml"
     sed -i  "s/§§PORT/${port}/g" "$folder/docker-compose.yml"
   # CHANGE  
-  # TODO special characters in passwords 
-    sed -i "s/§§EXTAPI_PORT/${EXTAPI_PORT}/g" "$folder/docker-compose.yml"
 }
 
 createFolders()
 {
-
-    echo "Create folders within $folder"
+    mkdir -p "$folder"
+    echo "Copy folders to $folder"
     if [[ ! -d "$folder" ]]; then
-        echo "Creating Installation Folder"
-        mkdir -p "$folder/images/phenotips-extapi"
-        mkdir -p "$folder/var/lib/mysql"
-        mkdir -p "$folder/phenotips/extapi"
     fi
-#
+
 # COPY 
-    cp -R images/phenotips-extapi/*  "$folder/images/phenotips-extapi/"    
-    cp -R images/phenotips-extapi/src/* "$folder/phenotips/extapi"   
+    cp -R alertmanager "$folder"
+    cp -R grafana "$folder"
+    cp -R prometheus "$folder"
+    cp user.config "$folder"
+    mkdir -p "$folder/var/lib/mysql"
+    mkdir -p "$folder/phenotips/extapi"
 
 }
 
@@ -86,9 +80,6 @@ while [ "$1" != "" ]; do
         -p | --port )           shift
                                 port=$1
                                 ;;
-         --EXTAPI_PORT )         shift
-                                EXTAPI_PORT=$1
-                                ;;                    
     esac
     shift
 done
