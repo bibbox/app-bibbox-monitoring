@@ -52,11 +52,9 @@ updateConfigurationFile()
 
 createFolders()
 {
+    echo "Create folder $folder"
     mkdir -p "$folder"
-    echo "Copy folders to $folder"
-    if [[ ! -d "$folder" ]]; then
-    fi
-
+    echo "Copy to $folder"
 # COPY 
     cp -R alertmanager "$folder"
     cp -R grafana "$folder"
