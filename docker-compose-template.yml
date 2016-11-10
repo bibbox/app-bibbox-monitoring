@@ -84,6 +84,6 @@ services:
     ports:
       - §§PORT:3000
     networks:
-      - monitor-net
+      - §§INSTANCE-monitor-net
     labels:
       org.label-schema.group: "monitoring"
