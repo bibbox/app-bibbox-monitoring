@@ -4,7 +4,6 @@ networks:
   monitor-net:
     driver: bridge
 
-
 volumes:
     prometheus_data: {}
     grafana_data: {}
@@ -23,6 +22,10 @@ services:
       - '-alertmanager.url=http://alertmanager:9093'
       - '-storage.local.memory-chunks=100000'
     restart: unless-stopped
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
     networks:
       - monitor-net
     labels:
@@ -37,6 +40,10 @@ services:
       - '-config.file=/etc/alertmanager/config.yml'
       - '-storage.path=/alertmanager'
     restart: unless-stopped
+    expose:
+      - 9093
+    ports:
+      - 9093:9093
     networks:
       - monitor-net
     labels:
@@ -46,6 +53,8 @@ services:
     image: prom/node-exporter
     container_name: §§INSTANCE-nodeexporter
     restart: unless-stopped
+    expose:
+      - 9100
     networks:
       - monitor-net
     labels:
@@ -60,6 +69,8 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
     restart: unless-stopped
+    expose:
+      - 8080
     networks:
       - monitor-net
     labels:
@@ -73,8 +84,10 @@ services:
     env_file:
       - user.config
     restart: unless-stopped
+    expose:
+      - 3000
     ports:
-      - §§PORT:3000
+      - 3000:3000
     networks:
       - monitor-net
     labels:
