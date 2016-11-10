@@ -1,0 +1,4 @@
+{
+  runningcontainers:["§§INSTANCE-prometheus", "§§INSTANCE-alertmanager"],
+  supportcontainers:[ ]    
+}
