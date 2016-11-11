@@ -20,7 +20,7 @@ services:
     command:
       - '-config.file=/etc/prometheus/prometheus.yml'
       - '-storage.local.path=/prometheus'
-      - '-alertmanager.url=http://alertmanager:9093'
+      - '-alertmanager.url=http://§§INSTANCE-alertmanager:9093'
       - '-storage.local.memory-chunks=100000'
     restart: unless-stopped
     expose:
