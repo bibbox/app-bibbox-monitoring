@@ -48,6 +48,8 @@ updateConfigurationFile()
     sed -i  "s#§§FOLDER#${folder}#g" "$folder/docker-compose.yml"
     sed -i  "s/§§PORT/${port}/g" "$folder/docker-compose.yml"
   # CHANGE  
+    sed -i  "s/§§INSTANCE/${instance}/g" "$folder/prometheus/prometheus.yml"
+  
 }
 
 createFolders()
@@ -60,8 +62,6 @@ createFolders()
     cp -R grafana "$folder"
     cp -R prometheus "$folder"
     cp user.config "$folder"
-    mkdir -p "$folder/var/lib/mysql"
-    mkdir -p "$folder/phenotips/extapi"
 
 }
 
