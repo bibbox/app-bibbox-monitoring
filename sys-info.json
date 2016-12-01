@@ -1,4 +1,4 @@
 {
-  runningcontainers:["-grafana"],
+  runningcontainers:["§§INSTANCE-grafana"],
   supportcontainers:[ ]    
 }
