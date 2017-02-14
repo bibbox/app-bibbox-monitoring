@@ -78,6 +78,8 @@ services:
     container_name: §§INSTANCE-grafana
     volumes:
       - grafana_data:/var/lib/grafana
+    links:
+        - §§INSTANCE-prometheus:prometheus
     env_file:
       - user.config
     restart: unless-stopped
