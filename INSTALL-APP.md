@@ -11,13 +11,11 @@ by modifying the [user.config](https://github.com/bibbox/app-bibbox-monitoring/b
 From the Grafana menu, choose ***Data Sources*** and click on ***Add Data Source***. 
 Use the following values to add the Prometheus container as data source:
 
-when your App is running at INSTANCENAME.your.domain.name
-
 you have to configure the data source to connect to the prometheus docker container named INSTANCENAME-prometheus.
 
 * Name: Prometheus
 * Type: Prometheus
-* Url: http://INSTANCENAME-prometheus:9090
+* Url: http://prometheus:9090
 * Access: proxy
 
 Now you can import the dashboard temples from the [grafana](https://github.com/bibbox/app-bibbox-monitoring/tree/master/grafana) directory. 
