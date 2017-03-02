@@ -1,9 +1,8 @@
 version: '2'
 
 networks:
-  §§INSTANCE-monitor-net:
-    driver: bridge
-
+    bibbox-default-network:
+      external: true
 
 volumes:
     prometheus_data: {}
