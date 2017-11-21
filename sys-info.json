@@ -1,4 +1,4 @@
 {
-  runningcontainers:["§§INSTANCE-grafana"],
+  runningcontainers:["§§INSTANCE-grafana","§§INSTANCE-alertmanager","§§INSTANCE-prometheus","§§INSTANCE-nodeexporter","§§INSTANCE-cadvisor" ],
   supportcontainers:[ ]    
 }

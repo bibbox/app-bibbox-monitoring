@@ -11,16 +11,16 @@ volumes:
 services:
 
   §§INSTANCE-prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:v1.8.2
     container_name: §§INSTANCE-prometheus
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.local.path=/prometheus'
-      - '--alertmanager.url=http://§§INSTANCE-alertmanager:9093'
-      - '--storage.local.memory-chunks=100000'
+      - '-config.file=/etc/prometheus/prometheus.yml'
+      - '-storage.local.path=/prometheus'
+      - '-alertmanager.url=http://§§INSTANCE-alertmanager:9093'
+      - '-storage.local.memory-chunks=100000'
     restart: unless-stopped
     expose:
       - 9090
