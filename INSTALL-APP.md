@@ -19,7 +19,7 @@ you have to configure the data source to connect to the prometheus docker contai
 * Access: proxy
 
 Now you can import the dashboard temples from the [grafana](https://github.com/bibbox/app-bibbox-monitoring/tree/master/grafana) directory. 
-From the Grafana menu, choose ***Dashboards*** and click on ***Import***.
+From the Grafana menu, choose ***Dashboards*** ***Manage*** and click on ***Import***.
 
 
 * https://grafana.net/dashboards/893
