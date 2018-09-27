@@ -5,7 +5,7 @@ You can remove the ports mapping from the docker-compose file and use NGINX as a
 
 ## Setup Grafana
 
-Navigate to `http://<host-ip>:3000` and login with user ***admin*** password ***changethepassword***. You can change the password from Grafana UI or 
+Navigate to the app by using the Bibbox and login with user ***admin*** password ***changethepassword***. You can change the password from Grafana UI or 
 by modifying the [user.config](https://github.com/bibbox/app-bibbox-monitoring/blob/master/user.config) file.
 
 From the Grafana menu, choose ***Data Sources*** and click on ***Add Data Source***. 
